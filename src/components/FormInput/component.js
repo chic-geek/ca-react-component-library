@@ -1,6 +1,6 @@
 import React from "react";
 
-const FormInput = ({ type, id, name, value, handleChange, classNames }) => {
+const FormInput = ({ type, id, name, value, handleChange }) => {
   return (
     <input
       type={type}
@@ -8,7 +8,6 @@ const FormInput = ({ type, id, name, value, handleChange, classNames }) => {
       name={name}
       value={value}
       onChange={handleChange}
-      className={classNames}
     />
   );
 };

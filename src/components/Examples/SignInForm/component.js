@@ -1,7 +1,6 @@
 import React from "react";
 import FormContainer from "../../FormContainer/component";
-import FormLabel from "../../FormLabel/component";
-import FormInput from "../../FormInput/component";
+import TextInput from '../../TextInput';
 
 const initialState = {
   username: "",
@@ -18,33 +17,25 @@ class SignInForm extends React.Component {
               <legend className="h2">Sign in form</legend>
 
               <div className="mb-3">
-                <div className="text-input">
-                  <FormLabel htmlFor="username" classNames="block bold mb-2">
-                    Username
-                  </FormLabel>
-                  <FormInput
-                    type="text"
-                    id="username"
-                    name="username"
-                    value={values.username}
-                    handleChange={handleChange}
-                  />
-                </div>
+                <TextInput
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={values.username}
+                  handleChange={handleChange}>
+                  Username
+                </TextInput>
               </div>
 
               <div className="mb-3">
-                <div className="text-input">
-                  <FormLabel htmlFor="password" classNames="block bold mb-2">
-                    Password
-                  </FormLabel>
-                  <FormInput
-                    type="text"
-                    id="password"
-                    name="password"
-                    value={values.password}
-                    handleChange={handleChange}
-                  />
-                </div>
+                <TextInput
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={values.password}
+                  handleChange={handleChange}>
+                  Password
+                </TextInput>
               </div>
             </fieldset>
           </form>

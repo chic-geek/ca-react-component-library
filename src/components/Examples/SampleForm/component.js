@@ -1,10 +1,12 @@
 import React from "react";
 import FormContainer from "../../FormContainer/component";
 import FormLabel from "../../FormLabel/component";
-import FormInput from "../../FormInput/component";
 import FormTextarea from "../../FormTextarea/component";
-import FormRadioCheck from "../../FormRadioCheck/component";
-import FormSelect from "../../FormSelect/component";
+
+import TextInput from "../../TextInput";
+import Checkbox from "../../Checkbox";
+import Radio from "../../Radio";
+import Select from "../../Select";
 
 const initialFormState = {
   firstname: "",
@@ -42,47 +44,38 @@ class SampleForm extends React.Component {
               </h2>
 
               <div className="mb-3">
-                <div className="text-input">
-                  <FormLabel htmlFor="firstname" classNames="block bold mb-2">
-                    Firstname
-                  </FormLabel>
-                  <FormInput
-                    type="text"
-                    id="firstname"
-                    name="firstname"
-                    value={values.firstname}
-                    handleChange={handleChange}
-                  />
-                </div>
+                <TextInput
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  value={values.firstname}
+                  handleChange={handleChange}>
+                  Firstname
+                </TextInput>
               </div>
 
               <div className="mb-3">
-                <div className="text-input">
-                  <FormLabel htmlFor="address" classNames="block bold mb-2">
-                    Enter your address
-                  </FormLabel>
-                  <FormTextarea
-                    id="address"
-                    name="address"
-                    value={values.address}
-                    handleChange={handleChange}
-                  />
-                </div>
+                <TextInput
+                  type="textarea"
+                  id="address"
+                  name="address"
+                  value={values.address}
+                  handleChange={handleChange}>
+                  Enter your address
+                </TextInput>
               </div>
 
               <div className="mb-3">
-                <div className="checkbox ml-0">
-                  <FormRadioCheck
-                    type="checkbox"
-                    id="acceptTerms"
-                    name="acceptTerms"
-                    checked={values.acceptTerms}
-                    handleChange={handleChange}
-                  />
-                  <FormLabel htmlFor="acceptTerms" classNames="ml-2 lh-2 semi-bold pointer">
-                    I accept the <a href="javascript:void(0)">Terms and Conditions</a>
-                  </FormLabel>
-                </div>
+                <Checkbox
+                  id="acceptTerms"
+                  name="acceptTerms"
+                  checked={values.acceptTerms}
+                  handleChange={handleChange}>
+                  I accept the{" "}
+                  <a className="a" href="javascript:void(0)">
+                    Terms and Conditions
+                  </a>
+                </Checkbox>
               </div>
             </fieldset>
 
@@ -92,20 +85,15 @@ class SampleForm extends React.Component {
               </h2>
 
               {values.fruits.map((fruit) => (
-                <div className="mb-1">
-                  <div className="checkbox ml-0" key={fruit.id}>
-                    <FormRadioCheck
-                      type="checkbox"
-                      id={fruit.value}
-                      name={fruit.name}
-                      value={fruit.value}
-                      checked={fruit.isChecked}
-                      handleChange={(event) => handleMultiCheck(event, fruit.id)}
-                    />
-                    <FormLabel htmlFor={fruit.value} classNames="ml-2 lh-2 semi-bold pointer">
-                      {fruit.value}
-                    </FormLabel>
-                  </div>
+                <div className="mb-1" key={fruit.id}>
+                  <Checkbox
+                    id={fruit.value}
+                    name={fruit.name}
+                    value={fruit.value}
+                    checked={fruit.isChecked}
+                    handleChange={(event) => handleMultiCheck(event, fruit.id)}>
+                    {fruit.value}
+                  </Checkbox>
                 </div>
               ))}
             </fieldset>
@@ -116,62 +104,49 @@ class SampleForm extends React.Component {
               </h2>
 
               <div className="mb-6">
-                <div className="radio">
-                  <FormRadioCheck
-                    type="radio"
+                <div className="inline mr-2">
+                  <Radio
                     id="overnight"
                     name="shipping"
                     value="overnight"
                     checked={values.shipping === "overnight"}
-                    handleChange={handleChange}
-                  />
-                  <FormLabel htmlFor="overnight" classNames="ml-2 lh-2 semi-bold pointer">
+                    handleChange={handleChange}>
                     Overnight
-                  </FormLabel>
+                  </Radio>
                 </div>
 
-                <div className="radio">
-                  <FormRadioCheck
-                    type="radio"
+                <div className="inline mr-2">
+                  <Radio
                     id="twoday"
                     name="shipping"
                     value="twoday"
                     checked={values.shipping === "twoday"}
-                    handleChange={handleChange}
-                  />
-                  <FormLabel htmlFor="twoday" classNames="ml-2 lh-2 semi-bold pointer">
+                    handleChange={handleChange}>
                     Two day
-                  </FormLabel>
+                  </Radio>
                 </div>
 
-                <div className="radio">
-                  <FormRadioCheck
-                    type="radio"
+                <div className="inline">
+                  <Radio
                     id="ground"
                     name="shipping"
                     value="ground"
                     checked={values.shipping === "ground"}
-                    handleChange={handleChange}
-                  />
-                  <FormLabel htmlFor="ground" classNames="ml-2 lh-2 semi-bold pointer">
+                    handleChange={handleChange}>
                     Ground
-                  </FormLabel>
+                  </Radio>
                 </div>
               </div>
 
               <div className="mb-3">
-                <FormLabel htmlFor="favcity" classNames="block bold mb-2">
-                  Choose your favorite city?
-                </FormLabel>
-                <div className="select">
-                  <FormSelect
-                    id="favcity"
-                    name="favcity"
-                    value={values.favcity}
-                    handleChange={handleChange}
-                    options={favcityOptions}
-                  />
-                </div>
+                <Select
+                  id="favcity"
+                  name="favcity"
+                  value={values.favcity}
+                  handleChange={handleChange}
+                  options={favcityOptions}>
+                  Choose your favourite city?
+                </Select>
               </div>
             </fieldset>
           </form>
