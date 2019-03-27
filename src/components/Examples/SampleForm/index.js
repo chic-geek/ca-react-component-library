@@ -1,8 +1,5 @@
 import React from "react";
-import FormContainer from "../../FormContainer/component";
-import FormLabel from "../../FormLabel/component";
-import FormTextarea from "../../FormTextarea/component";
-
+import FormContainer from "../../FormContainer";
 import TextInput from "../../TextInput";
 import Checkbox from "../../Checkbox";
 import Radio from "../../Radio";

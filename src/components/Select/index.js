@@ -1,6 +1,6 @@
 import React from "react";
-import FormLabel from "../FormLabel/component";
-import FormSelect from "../FormSelect/component";
+import FormLabel from "../FormLabel";
+import FormSelect from "../FormSelect";
 
 const Select = (props) => {
   return (

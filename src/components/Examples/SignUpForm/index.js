@@ -1,6 +1,6 @@
 import React from "react";
-import FormContainer from "../../FormContainer/component";
-import TextInput from '../../TextInput';
+import FormContainer from "../../FormContainer";
+import TextInput from "../../TextInput";
 import Checkbox from "../../Checkbox";
 
 const initialState = {

@@ -1,9 +1,9 @@
-import "./component.scss";
+import "./styles.scss";
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SignUpForm from "../Examples/SignUpForm/component";
-import SignInForm from "../Examples/SignInForm/component";
-import SampleForm from "../Examples/SampleForm/component";
+import SignUpForm from "../Examples/SignUpForm";
+import SignInForm from "../Examples/SignInForm";
+import SampleForm from "../Examples/SampleForm";
 
 class App extends React.Component {
   render() {

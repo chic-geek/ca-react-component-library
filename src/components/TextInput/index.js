@@ -1,7 +1,7 @@
 import React from "react";
-import FormLabel from "../FormLabel/component";
-import FormInput from "../FormInput/component";
-import FormTextarea from "../FormTextarea/component";
+import FormLabel from "../FormLabel";
+import FormInput from "../FormInput";
+import FormTextarea from "../FormTextarea";
 
 const TextInput = (props) => {
   return (

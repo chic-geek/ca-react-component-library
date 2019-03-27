@@ -1,6 +1,6 @@
-import React from 'react';
-import FormLabel from '../FormLabel/component';
-import FormRadioCheck from '../FormRadioCheck/component';
+import React from "react";
+import FormLabel from "../FormLabel";
+import FormRadioCheck from "../FormRadioCheck";
 
 const Checkbox = (props) => {
   return (
@@ -10,7 +10,7 @@ const Checkbox = (props) => {
         {props.children}
       </FormLabel>
     </div>
-  )
-}
+  );
+};
 
 export default Checkbox;
