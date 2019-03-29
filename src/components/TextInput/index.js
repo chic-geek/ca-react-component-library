@@ -5,7 +5,7 @@ import FormTextarea from "../FormTextarea";
 
 const TextInput = (props) => {
   return (
-    <div className="text-input">
+    <div className={`text-input ${props.classes}`}>
       <FormLabel classNames="block bold mb-2" htmlFor={props.id}>
         {props.children}
       </FormLabel>
